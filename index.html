@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>2026 FIFA World Cup – Group Stage Analysis</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0e1a;
@@ -132,7 +133,11 @@
 
   .matchday-badge { background: var(--bg3); color: var(--muted); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-bottom: 0.8rem; display: inline-flex; align-items: center; gap: 5px; }
 
-  @media (max-width: 600px) {
+  .logo-wrap { display: flex; align-items: center; justify-content: flex-start; padding: 0.9rem 1.6rem 0; position: relative; z-index: 2; }
+  .logo { display: inline-flex; align-items: baseline; gap: 0; text-decoration: none; }
+  .logo-punt { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; color: #ffffff; line-height: 1; }
+  .logo-prof { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; color: var(--gold); line-height: 1; }
+  .logo-dot { display: inline-block; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin: 0 1px 4px; vertical-align: bottom; flex-shrink: 0; }
     .hero h1 { font-size: 1.4rem; }
     .section { padding: 1rem; }
     .group-grid { grid-template-columns: 1fr; }
@@ -141,6 +146,12 @@
 </style>
 </head>
 <body>
+
+<div class="logo-wrap">
+  <span class="logo" aria-label="PuntProf">
+    <span class="logo-punt">Punt</span><span class="logo-prof">Prof</span>
+  </span>
+</div>
 
 <div class="hero">
   <div class="badge"><i class="ti ti-world-cup" aria-hidden="true"></i> 2026 FIFA World Cup – Statistical Analysis</div>
