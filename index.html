@@ -139,6 +139,34 @@
   .logo-prof { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; letter-spacing: 2px; color: var(--gold); line-height: 1; }
   .logo-dot { display: inline-block; width: 6px; height: 6px; background: var(--gold); border-radius: 50%; margin: 0 1px 4px; vertical-align: bottom; flex-shrink: 0; }
 
+  /* Schedule section */
+  .sched-md-header { display: flex; align-items: center; gap: 10px; margin: 1.5rem 0 0.75rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); }
+  .sched-md-title { font-size: 1rem; font-weight: 700; color: var(--accent); }
+  .sched-md-count { font-size: 11px; color: var(--muted); background: var(--bg3); padding: 2px 8px; border-radius: 10px; }
+  .sched-date-header { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 1rem 0 0.4rem; padding: 0.3rem 0.6rem; background: var(--bg3); border-radius: 6px; display: inline-block; }
+  .sched-row { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; margin-bottom: 0.5rem; display: grid; grid-template-columns: 80px 1fr 1fr 1fr; gap: 0.5rem; align-items: start; }
+  .sched-row:hover { border-color: rgba(59,130,246,0.3); }
+  .sched-time { display: flex; flex-direction: column; gap: 3px; }
+  .sched-time-val { font-size: 13px; font-weight: 700; color: var(--text); }
+  .sched-time-date { font-size: 10px; color: var(--muted); }
+  .sched-time-grp { font-size: 10px; font-weight: 600; color: #93c5fd; background: rgba(59,130,246,0.15); padding: 1px 5px; border-radius: 3px; display: inline-block; margin-top: 2px; }
+  .sched-match { display: flex; flex-direction: column; gap: 4px; }
+  .sched-teams { font-size: 13px; font-weight: 600; color: var(--text); }
+  .sched-teams span.vs { color: var(--muted); font-weight: 400; margin: 0 4px; font-size: 11px; }
+  .sched-score { font-size: 11px; color: var(--accent); font-weight: 600; }
+  .sched-pred { display: flex; flex-direction: column; gap: 3px; }
+  .sched-pred-item { display: flex; align-items: flex-start; gap: 5px; }
+  .sched-pred-label { font-size: 11px; color: var(--text); line-height: 1.4; }
+  .sched-pred-label em { color: var(--muted); font-style: normal; font-size: 10px; }
+  .sched-filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .sched-filter { background: var(--bg3); border: 1px solid var(--border); color: var(--muted); padding: 4px 12px; border-radius: 6px; cursor: pointer; font-size: 11px; font-weight: 600; transition: all 0.15s; }
+  .sched-filter:hover { border-color: var(--accent); color: var(--text); }
+  .sched-filter.active { background: rgba(59,130,246,0.15); border-color: var(--accent); color: var(--accent); }
+  @media (max-width: 700px) {
+    .sched-row { grid-template-columns: 70px 1fr; }
+    .sched-pred { grid-column: 1 / -1; }
+  }
+
   /* Prediction rows */
   .pred-divider { border: none; border-top: 1px solid var(--border); margin: 0.65rem 0 0.5rem; }
   .pred-row { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 0.3rem; }
@@ -185,6 +213,7 @@
   <button class="nav-btn" onclick="showSection('groupJ')" data-section="groupJ">Group J</button>
   <button class="nav-btn" onclick="showSection('groupK')" data-section="groupK">Group K</button>
   <button class="nav-btn" onclick="showSection('groupL')" data-section="groupL">Group L</button>
+  <button class="nav-btn" onclick="showSection('md2')" data-section="md2">⚽ Matchday 2</button>
   <button class="nav-btn" onclick="showSection('summary')" data-section="summary">Summary</button>
 </nav>
 
@@ -927,6 +956,474 @@
 </div>
 
 <!-- SUMMARY -->
+<!-- MD2 SECTION START -->
+<div id="md2" class="section">
+<div style="background:linear-gradient(90deg,rgba(59,130,246,0.12),rgba(139,92,246,0.08));border:1px solid rgba(59,130,246,0.25);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.5rem;">
+  <div style="font-size:13px;font-weight:700;color:#93c5fd;margin-bottom:0.5rem;">📋 MATCHDAY 1 — ACTUAL RESULTS (All 24 Games)</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:4px 12px;font-size:12px;color:var(--muted);">
+    <span>🇲🇽 Mexico <strong style="color:var(--text)">2–0</strong> South Africa 🇿🇦</span>
+    <span>🇰🇷 South Korea <strong style="color:var(--text)">2–1</strong> Czechia 🇨🇿</span>
+    <span>🇨🇦 Canada <strong style="color:var(--text)">1–1</strong> Bosnia &amp; Herz. 🇧🇦</span>
+    <span>🇺🇸 USA <strong style="color:var(--text)">4–1</strong> Paraguay 🇵🇾</span>
+    <span>🇶🇦 Qatar <strong style="color:var(--text)">1–1</strong> Switzerland 🇨🇭</span>
+    <span>🇧🇷 Brazil <strong style="color:var(--text)">1–1</strong> Morocco 🇲🇦</span>
+    <span>🇭🇹 Haiti <strong style="color:var(--text)">0–1</strong> Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿</span>
+    <span>🇦🇺 Australia <strong style="color:var(--text)">2–0</strong> Türkiye 🇹🇷</span>
+    <span>🇩🇪 Germany <strong style="color:var(--text)">7–1</strong> Curaçao 🇨🇼</span>
+    <span>🇳🇱 Netherlands <strong style="color:var(--text)">2–2</strong> Japan 🇯🇵</span>
+    <span>🇨🇮 Ivory Coast <strong style="color:var(--text)">1–0</strong> Ecuador 🇪🇨</span>
+    <span>🇸🇪 Sweden <strong style="color:var(--text)">5–1</strong> Tunisia 🇹🇳</span>
+    <span>🇪🇸 Spain <strong style="color:var(--text)">0–0</strong> Cape Verde 🇨🇻</span>
+    <span>🇧🇪 Belgium <strong style="color:var(--text)">1–1</strong> Egypt 🇪🇬</span>
+    <span>🇸🇦 Saudi Arabia <strong style="color:var(--text)">1–1</strong> Uruguay 🇺🇾</span>
+    <span>🇮🇷 Iran <strong style="color:var(--text)">2–2</strong> New Zealand 🇳🇿</span>
+    <span>🇫🇷 France <strong style="color:var(--text)">3–1</strong> Senegal 🇸🇳</span>
+    <span>🇮🇶 Iraq <strong style="color:var(--text)">1–4</strong> Norway 🇳🇴</span>
+    <span>🇦🇷 Argentina <strong style="color:var(--text)">3–0</strong> Algeria 🇩🇿</span>
+    <span>🇦🇹 Austria <strong style="color:var(--text)">3–1</strong> Jordan 🇯🇴</span>
+    <span>🇵🇹 Portugal <strong style="color:var(--text)">1–1</strong> DR Congo 🇨🇩</span>
+    <span>🇬🇧 England <strong style="color:var(--text)">4–2</strong> Croatia 🇭🇷</span>
+    <span>🇬🇭 Ghana <strong style="color:var(--text)">1–0</strong> Panama 🇵🇦</span>
+    <span>🇺🇿 Uzbekistan <strong style="color:var(--text)">1–3</strong> Colombia 🇨🇴</span>
+  </div>
+</div>
+<div class="section-title"><i class="ti ti-chart-line"></i> MD1 Form Analysis — How It Changes MD2</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0.8rem;margin-bottom:1.5rem;">
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP A</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--green);font-weight:600;">Mexico 2–0 RSA</span> — Quinones &amp; Jimenez. Controlled. Host confidence sky-high. <span style="color:var(--gold);font-weight:600;">South Korea 2–1 CZE</span> — Comeback win. Lee Kang-in &amp; Oh sealed it. Son came off bench. KOR transitions sharp. <strong style="color:var(--text)">Shift:</strong> Mexico need only a draw vs KOR to qualify. Czechia must win vs RSA and hope. Son expected to start MD2.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP B</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--orange);font-weight:600;">Canada 1–1 Bosnia</span> — Dzeko dangerous, Davies managed. <span style="color:var(--red);font-weight:600;">Qatar 1–1 Switzerland</span> — Major shock. Al-Haydos scored first. Embolo equalised late. Switzerland's failure vs Qatar is a serious alarm bell. <strong style="color:var(--text)">Shift:</strong> All 4 teams level on 1pt. Switzerland MUST beat Bosnia. Completely open group.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP C</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--orange);font-weight:600;">Brazil 1–1 Morocco</span> — Vinicius scored, Ounahi equalised. Brazil not convincing without Neymar. <span style="color:var(--green);font-weight:600;">Scotland 1–0 Haiti</span> — Robertson header. Professional. <strong style="color:var(--text)">Shift:</strong> Morocco believe they can top the group. Brazil need a big win vs Haiti to rebuild GD. Scotland in 3rd on points — bizarre situation.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP D</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--green);font-weight:600;">USA 4–1 Paraguay</span> — Balogun hat-trick. Pulisic brilliant then calf injury. <span style="color:var(--red);font-weight:600;">Australia 2–0 Turkey</span> — Major upset. Leckie &amp; Hrustic. Calhanoglu subbed early (hamstring). <strong style="color:var(--text)">Shift:</strong> Australia unexpectedly lead. Pulisic injury is the key variable for USA vs Australia. Turkey in danger.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP E</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--green);font-weight:600;">Germany 7–1 Curacao</span> — Havertz brace, Musiala electric. Neuer solid. But Curacao is not a real test. <span style="color:var(--orange);font-weight:600;">Ivory Coast 1–0 Ecuador</span> — Amad Diallo winner. ECU had 1.8 xG, scored 0. <strong style="color:var(--text)">Shift:</strong> Ivory Coast lead Group E. Germany vs Ivory Coast is now the group decider. Ecuador must beat Curacao heavily.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP F</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--orange);font-weight:600;">Netherlands 2–2 Japan</span> — Mitoma late equaliser. Japan proved 2022 was no fluke. NED's high line exposed. <span style="color:var(--green);font-weight:600;">Sweden 5–1 Tunisia</span> — Isak 2, Gykeres 2. Dominant. <strong style="color:var(--text)">Shift:</strong> Sweden lead Group F. NED must beat Sweden. Japan control their destiny. Tunisia eliminated.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP G</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--red);font-weight:600;">Belgium 1–1 Egypt</span> — Ashour scored 19'. De Bruyne anonymous. Belgium in crisis. <span style="color:var(--orange);font-weight:600;">Iran 2–2 NZL</span> — Just brace for NZL. Comeback from Iran. <strong style="color:var(--text)">Shift:</strong> All 4 teams level. Belgium vs Iran is now a genuine 50/50. NZL's 3rd-place route alive. Most chaotic group.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP H</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--red);font-weight:600;">Spain 0–0 Cape Verde</span> — Historic shock. Vozinha 8 saves. Spain 26 shots, 0 goals. <span style="color:var(--orange);font-weight:600;">Saudi Arabia 1–1 Uruguay</span> — Al-Amri first, Araujo equalised. <strong style="color:var(--text)">Shift:</strong> All 4 level. Yamal confirmed to START vs Saudi Arabia. Spain's attacking crisis is real. Cape Verde believe they can qualify.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP I</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--green);font-weight:600;">France 3–1 Senegal</span> — Mbappe brace, Barcola. Olise excellent. <span style="color:var(--green);font-weight:600;">Norway 4–1 Iraq</span> — Haaland 2, Odegaard &amp; Sorloth added. Electric. <strong style="color:var(--text)">Shift:</strong> France &amp; Norway both dominant on 3pts. Senegal must beat Norway or go home. Norway vs Senegal is the defining match.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP J</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--green);font-weight:600;">Argentina 3–0 Algeria</span> — Messi hat-trick. First WC hat-trick of his career. Algeria outclassed. <span style="color:var(--green);font-weight:600;">Austria 3–1 Jordan</span> — Sabitzer, Alaba brace. Impressive. <strong style="color:var(--text)">Shift:</strong> ARG &amp; AUT both on 3pts. Algeria must beat Jordan and hope. Argentina vs Austria is the group decider.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP K</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--red);font-weight:600;">Portugal 1–1 DR Congo</span> — Neves early, Wissa equalised before HT. Ronaldo ineffective. Major shock. <span style="color:var(--green);font-weight:600;">Colombia 3–1 Uzbekistan</span> — Munoz, Diaz, Campaz. Controlled. <strong style="color:var(--text)">Shift:</strong> Colombia lead. Portugal in disarray. DR Congo 2nd. Portugal MUST beat Uzbekistan big.</div>
+  </div>
+
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.9rem 1rem;">
+    <div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:1px;margin-bottom:0.5rem;">GROUP L</div>
+    <div style="font-size:12px;color:var(--muted);line-height:1.6;"><span style="color:var(--green);font-weight:600;">England 4–2 Croatia</span> — Kane brace, Bellingham, Rashford. VAR controversy. Thrilling. <span style="color:var(--green);font-weight:600;">Ghana 1–0 Panama</span> — Yirenkyi 90+'. Scrappy but effective. <strong style="color:var(--text)">Shift:</strong> England &amp; Ghana top. Croatia must beat Panama convincingly. Panama near-eliminated.</div>
+  </div>
+
+</div>
+<div class="section-title"><i class="ti ti-alert-triangle"></i> Key MD2 Injury &amp; Suspension News</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:0.6rem;margin-bottom:1.5rem;">
+  <div class="injury-card"><div class="injury-title"><span class="injury-team">USA — Pulisic</span><span class="severity high">DOUBT</span></div><div class="injury-players">Left calf strain vs Paraguay. Training solo. Pochettino "day to day." If absent, USA lose their primary creator vs a flying Australia. Reyna or Weah would start — significant downgrade.</div></div>
+  <div class="injury-card"><div class="injury-title"><span class="injury-team">Spain — Yamal</span><span class="severity med">STARTS MD2</span></div><div class="injury-players">Came off bench vs Cape Verde (hamstring managed). De la Fuente confirmed he STARTS vs Saudi Arabia. Nico Williams also starting. Complete attacking revamp after 0–0 disaster.</div></div>
+  <div class="injury-card"><div class="injury-title"><span class="injury-team">Turkey — Calhanoglu</span><span class="severity high">DOUBT</span></div><div class="injury-players">Subbed early vs Australia (hamstring). If absent vs Paraguay, Turkey lose their entire midfield engine. Ozcan would deputise — major downgrade in creative output.</div></div>
+  <div class="injury-card"><div class="injury-title"><span class="injury-team">Brazil — Neymar</span><span class="severity med">RETURNS MD2</span></div><div class="injury-players">Ancelotti confirmed Neymar rejoins squad after calf management. Expected to play 45–60 mins vs Haiti. Not full match ready but his presence changes Brazil's attacking options completely.</div></div>
+  <div class="injury-card"><div class="injury-title"><span class="injury-team">Portugal — Ronaldo</span><span class="severity med">FORM CRISIS</span></div><div class="injury-players">Not injured — tactically redundant vs DR Congo. Zero shots on target. Martinez faces the biggest selection dilemma of the tournament: drop Ronaldo for Goncalo Ramos or persist?</div></div>
+  <div class="injury-card"><div class="injury-title"><span class="injury-team">Belgium — De Bruyne</span><span class="severity med">FORM CONCERN</span></div><div class="injury-players">Invisible vs Egypt (1–1). Not injured but visibly below peak at 35. Belgium over-reliant on him. Trossard and Doku must shoulder more creative responsibility vs Iran's low block.</div></div>
+</div>
+
+<div class="section-title"><i class="ti ti-calendar"></i> Matchday 2 — All 24 Matches: Analysis &amp; Predictions</div>
+<div class="matches-section">
+  <!-- MATCH 1: Czechia vs South Africa -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">A · MD2</span> Jun 18 · 17:00 · Atlanta</div>
+    <div class="match-teams"><div class="team-name">Czechia</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">South Africa</div></div>
+    <div class="probs"><span class="prob-pill prob-w">CZE 58%</span><span class="prob-pill prob-d">Draw 24%</span><span class="prob-pill prob-l">RSA 18%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">🔴 MUST WIN — Czechia eliminated if they draw or lose</span><span class="factor-tag rank">RSA created zero chances vs Mexico</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: CZE lost 1–2 KOR (Krejci scored from set piece — delivery is a weapon). RSA lost 0–2 MEX (0 shots on target). Czechia's elimination pressure produces performance. RSA have no cutting edge at this level.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Czechia Win <em>— must-win pressure, 19-rank gap, RSA showed nothing offensively vs Mexico</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Czechia Double Chance <em>— 82% Czechia don't lose this elimination decider</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Over 2.5 Goals <em>— both sides open; Czechia need goals; Krejci's set-piece delivery threatens</em></div></div>
+  </div>
+
+  <!-- MATCH 2: Switzerland vs Bosnia -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">B · MD2</span> Jun 18 · 20:00 · Los Angeles</div>
+    <div class="match-teams"><div class="team-name">Switzerland</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Bosnia &amp; Herz.</div></div>
+    <div class="probs"><span class="prob-pill prob-w">SUI 60%</span><span class="prob-pill prob-d">Draw 24%</span><span class="prob-pill prob-l">BIH 16%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">🔴 Switzerland MUST WIN after Qatar 1–1 shock</span><span class="factor-tag rank">Dzeko proved dangerous vs Canada</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: SUI 1–1 QAT — Embolo equalised 90'. SUI failed to beat Qatar. Defensive set-piece vulnerability exposed. BIH 1–1 CAN — Dzeko assist, Bosnia showed resilience. Both sides need a win. Switzerland's pride demands a reaction but Bosnia's Dzeko remains a constant danger.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Switzerland Win <em>— pride after Qatar shock; Xhaka/Freuler dominate midfield; Bosnia's squad depth limited for 90 mins</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Switzerland Double Chance <em>— 84% SUI don't lose; Bosnia lack quality to sustain pressure over 90 mins</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Both Teams to Score <em>— Dzeko guaranteed to threaten; Switzerland showed defensive vulnerability at set pieces vs Qatar</em></div></div>
+  </div>
+
+  <!-- MATCH 3: Canada vs Qatar -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">B · MD2</span> Jun 18 · 23:00 · Vancouver</div>
+    <div class="match-teams"><div class="team-name">Canada</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Qatar</div></div>
+    <div class="probs"><span class="prob-pill prob-w">CAN 62%</span><span class="prob-pill prob-d">Draw 22%</span><span class="prob-pill prob-l">QAT 16%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag host">🏠 Host advantage — Vancouver crowd massive</span><span class="factor-tag rank">Qatar proved they can score — Al-Haydos stunned Switzerland</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: CAN 1–1 BIH — Larin scored, Davies managed. Canada's finishing was wasteful. QAT 1–1 SUI — Al-Haydos opened the scoring vs a ranked side. Qatar can cause problems for 45 mins before energy fades. Canada MUST win here to stay alive. Davies expected to start fully.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Canada Win <em>— host crowd, Davies fit and starting, Qatar's energy typically fades second half</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Canada Win &amp; Over 1.5 Goals <em>— Qatar concede freely when pressed; Canada's home scoring record excellent</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Draw <em>— Qatar showed vs Switzerland they can hang on; Canada's finishing was wasteful in MD1 — 22% probability</em></div></div>
+  </div>
+
+  <!-- MATCH 4: Mexico vs South Korea -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">A · MD2</span> Jun 19 · 02:00 · Guadalajara</div>
+    <div class="match-teams"><div class="team-name">Mexico</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">South Korea</div></div>
+    <div class="probs"><span class="prob-pill prob-w">MEX 38%</span><span class="prob-pill prob-d">Draw 38%</span><span class="prob-pill prob-l">KOR 24%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag host">🏠 Estadio Akron — near-home atmosphere for Mexico</span><span class="factor-tag injury">Son STARTS — rested in MD1, now fully fresh</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: MEX 2–0 RSA — professional. Malagón still absent (backup GK a weakness). KOR 2–1 CZE — comeback win, Lee Kang-in &amp; Oh sharp. Son came off bench and caused problems immediately. Son starting MD2 is a game-changer for KOR. Mexico comfortable enough for a point — a draw qualifies them. KOR need a win to take control of 2nd.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Draw <em>— Mexico comfortable with a point; Son vs Mexico's backup GK is the key duel; tactical game expected</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Under 2.5 Goals <em>— Mexico won't gamble; KOR won't overcommit knowing they need their best for MD3</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Mexico Win <em>— Estadio Akron crowd is deafening; Jimenez leads line well vs KOR's high line; 38% probability</em></div></div>
+  </div>
+  <!-- MATCH 5: USA vs Australia -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">D · MD2</span> Jun 19 · 20:00 · Seattle</div>
+    <div class="match-teams"><div class="team-name">USA</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Australia</div></div>
+    <div class="probs"><span class="prob-pill prob-w">USA 45%</span><span class="prob-pill prob-d">Draw 28%</span><span class="prob-pill prob-l">AUS 27%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag injury">🔴 Pulisic DOUBT — calf strain, training solo</span><span class="factor-tag rank">Australia beat Turkey 2–0 — form team of the tournament so far</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: USA 4–1 PAR — Balogun hat-trick, Pulisic electric until calf injury. AUS 2–0 TUR — Leckie's pace and Hrustic's range destroyed Turkey. Australia's 4-5-1 defensive shape frustrated a ranked opponent. Pulisic's absence fundamentally changes USA's attack. Reyna or Weah start — neither is a like-for-like. Australia have momentum, belief and a settled XI coming in.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">USA Win <em>— home crowd; Balogun in hat-trick form; Pochettino's structure superior even without Pulisic</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Draw <em>— if Pulisic is out, Australia's compact shape will frustrate; Leckie on the break is a constant danger; 28% probability backed by data</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Australia Win <em>— Pulisic absence is the difference; Socceroos carry MD1 momentum; 27% — genuinely possible</em></div></div>
+  </div>
+
+  <!-- MATCH 6: Scotland vs Morocco -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">C · MD2</span> Jun 19 · 23:00 · Boston</div>
+    <div class="match-teams"><div class="team-name">Scotland</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Morocco</div></div>
+    <div class="probs"><span class="prob-pill prob-w">SCO 18%</span><span class="prob-pill prob-d">Draw 32%</span><span class="prob-pill prob-l">MAR 50%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Morocco 1–1 Brazil — proved defensive world-class pedigree</span><span class="factor-tag rank">Ezzalzouli expected to return from knee issue</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: SCO 1–0 HAI — Robertson header. Professional but not expansive. Morocco 1–1 BRA — Ounahi equalised Vinicius. Morocco's Dari/Aguerd defensive block showed 2022-era quality. Ezzalzouli returning (knee) — if he starts, Morocco's counter-attack threat doubles. Scotland's set-piece delivery via Robertson and McGinn is their only realistic route to goal against this level.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Morocco Win <em>— Dari/Aguerd wall too strong; Ezzalzouli's pace on the break; Scotland lack creative quality to break the low block</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Morocco Double Chance <em>— 82% Morocco don't lose; Scotland have never scored more than 1 vs top-20 opposition in 2026</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Draw &amp; Under 2.5 Goals <em>— Scotland can grind for a point; Morocco may not overcommit knowing Brazil must do the work</em></div></div>
+  </div>
+
+  <!-- MATCH 7: Brazil vs Haiti -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">C · MD2</span> Jun 20 · 01:30 · Philadelphia</div>
+    <div class="match-teams"><div class="team-name">Brazil</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Haiti</div></div>
+    <div class="probs"><span class="prob-pill prob-w">BRA 90%</span><span class="prob-pill prob-d">Draw 8%</span><span class="prob-pill prob-l">HAI 2%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★★</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Neymar RETURNS — expected 60 mins vs Haiti</span><span class="factor-tag rank">Haiti 0–1 Scotland — created nothing all game</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: BRA 1–1 MAR — underwhelming. Vinicius rescued them. Ancelotti confirmed Neymar returns and will play. Haiti 0–1 SCO — single set-piece goal, Haiti showed zero attacking threat in 90 minutes. Brazil need to win BIG to rebuild GD vs Morocco. Expect Raphinha, Vinicius, Martinelli all starting with Neymar off bench or starting. Full attacking intensity from minute 1.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Brazil Win &amp; Over 3.5 Goals <em>— Neymar returns vs Haiti's rank-82 defence; Brazil need GD urgently; full attacking intent</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Brazil Win &amp; Over 2.5 Goals <em>— near-certainty; the most reliable scoreline bet of MD2; Haiti have no answers</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Brazil to Score in Both Halves <em>— Ancelotti pushes from kick-off; Haiti cannot sustain a 90-min defence vs this attack</em></div></div>
+  </div>
+
+  <!-- MATCH 8: Turkey vs Paraguay -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">D · MD2</span> Jun 20 · 04:00 · Santa Clara</div>
+    <div class="match-teams"><div class="team-name">Türkiye</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Paraguay</div></div>
+    <div class="probs"><span class="prob-pill prob-w">TUR 52%</span><span class="prob-pill prob-d">Draw 26%</span><span class="prob-pill prob-l">PAR 22%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag injury">Calhanoglu DOUBT — hamstring, subbed early vs Australia</span><span class="factor-tag rank">Both desperate — loser almost certainly eliminated</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: TUR 0–2 AUS — badly exposed on transitions by Leckie. Calhanoglu replaced early (hamstring). Without their engine, Turkey look average. PAR 1–4 USA — outclassed but Almiron scored showing some creativity. Enciso still absent. Turkey still have more quality on paper but are psychologically rattled. Both need wins — loser is effectively out.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Türkiye Win <em>— last-chance game; Guler and Yildiz must step up; Paraguay's defence conceded 4 in MD1</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Türkiye Double Chance <em>— Turkey's individual talent still far above Paraguay's even without Calhanoglu</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Both Teams to Score <em>— Paraguay showed they score even in a 4–1 defeat; both sides open in desperation; 26% draw also possible</em></div></div>
+  </div>
+  <!-- MATCH 9: Netherlands vs Sweden -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">F · MD2</span> Jun 20 · 18:00 · Houston</div>
+    <div class="match-teams"><div class="team-name">Netherlands</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Sweden</div></div>
+    <div class="probs"><span class="prob-pill prob-w">NED 52%</span><span class="prob-pill prob-d">Draw 26%</span><span class="prob-pill prob-l">SWE 22%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Sweden demolished Tunisia 5–1 — Isak &amp; Gykeres on fire</span><span class="factor-tag rank">NED drew 2–2 Japan — high line exposed repeatedly</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: NED 2–2 JPN — Van Dijk headed NED ahead, Nakamura equalised, Depay restored lead, Mitoma late equaliser. NED's high defensive line was consistently exposed by Japan's runners. SWE 5–1 TUN — Isak (2), Gykeres (2), Svanberg. Devastating. Sweden's Isak-Gykeres partnership is generating elite xG numbers. Sweden's pace on the break is exactly what exploited NED's high line vs Japan. NED need a win but face their most dangerous opponent.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Netherlands Win <em>— Van Dijk leadership, Gakpo &amp; Depay quality; NED too strong over 90 mins despite defensive nerves</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Both Teams to Score <em>— Isak WILL find space behind NED's high line; NED will score; Gykeres also a threat — safest structural bet</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Sweden Win <em>— Isak vs Van Dijk: Sweden's counter-pace could swing this; NED's high line is their exposed Achilles heel; 22% genuine probability</em></div></div>
+  </div>
+
+  <!-- MATCH 10: Germany vs Ivory Coast -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">E · MD2</span> Jun 20 · 21:00 · Toronto</div>
+    <div class="match-teams"><div class="team-name">Germany</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Ivory Coast</div></div>
+    <div class="probs"><span class="prob-pill prob-w">GER 52%</span><span class="prob-pill prob-d">Draw 28%</span><span class="prob-pill prob-l">CIV 20%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Germany 7–1 Curacao — but this tells us nothing about elite competition</span><span class="factor-tag rank">Ivory Coast lead Group E after 1–0 Ecuador</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: GER 7–1 CUW — Havertz brace, Musiala brilliant. But Curacao is the weakest team in the tournament — tells us almost nothing about GER vs real opposition. Baumann (GK, replacing Ter Stegen) untested at this level. CIV 1–0 ECU — Amad Diallo winner. Ivory Coast's counter-attack pace via Pepe, Adingra and Amad is perfectly suited to exploiting Germany's historically aggressive high line. This is the most genuinely uncertain match of MD2.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Germany Win <em>— Havertz/Musiala midfield dominance; CIV's energy hard to sustain vs German press for full 90 mins</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Germany Double Chance <em>— 80% Germany don't lose; covers Ivory Coast upset; solid structural pick</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Draw <em>— Ivory Coast lead Group E; can sit and counter; Amad Diallo's pace vs Germany's high line is dangerous enough for 28%</em></div></div>
+  </div>
+
+  <!-- MATCH 11: Ecuador vs Curacao -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">E · MD2</span> Jun 21 · 01:00 · Kansas City</div>
+    <div class="match-teams"><div class="team-name">Ecuador</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Curaçao</div></div>
+    <div class="probs"><span class="prob-pill prob-w">ECU 82%</span><span class="prob-pill prob-d">Draw 12%</span><span class="prob-pill prob-l">CUW 6%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★★</span></div>
+    <div class="key-factors"><span class="factor-tag rank">🔴 Ecuador MUST WIN after shock Ivory Coast loss</span><span class="factor-tag rank">Curacao conceded 7 to Germany — defence non-existent at this level</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: ECU 0–1 CIV — Valencia missed two sitters despite 1.8 xG. Finishing must improve. CUW 1–7 GER — Comenencia scored a historic first WC goal but their defence is qualification-standard, not tournament-standard. Ecuador's elimination pressure guarantees an aggressive, attacking approach. Valencia and Plata need big games. ECU will push hard from kick-off.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Ecuador Win &amp; Over 3.5 Goals <em>— need GD; Curacao gave up 7 in MD1; Ecuador were clinical in CONMEBOL qualifying</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Ecuador Win &amp; Over 2.5 Goals <em>— near-certainty; the most reliable big-score prediction of MD2</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Ecuador Win to Nil <em>— Curacao scored a late consolation vs Germany at 7–0; ECU won't concede when focused</em></div></div>
+  </div>
+
+  <!-- MATCH 12: Tunisia vs Japan -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">F · MD2</span> Jun 21 · 05:00 · Miami</div>
+    <div class="match-teams"><div class="team-name">Tunisia</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Japan</div></div>
+    <div class="probs"><span class="prob-pill prob-w">TUN 16%</span><span class="prob-pill prob-d">Draw 22%</span><span class="prob-pill prob-l">JPN 62%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Tunisia conceded 5 to Sweden — high line exposed on transitions</span><span class="factor-tag rank">Japan 2–2 NED — Mitoma &amp; Nakamura elite quality confirmed</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: TUN 1–5 SWE — completely overrun by Isak's intelligent movement. Tunisia's high defensive line exploited repeatedly. JPN 2–2 NED — Nakamura &amp; Mitoma world-class performances. Japan's 4-4-2 press destroyed Netherlands at times. Japan in excellent form; Tunisia in a crisis. Tunisia practically eliminated — need a miracle. Japan's pace and pressing will punish the same high-line issues Sweden exposed.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Japan Win <em>— Tunisia's defensive issues vs pace exploited again; Mitoma, Doan, Nakamura too quick</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Japan Win &amp; Over 1.5 Goals <em>— very high probability; Japan score freely vs exposed defence</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Japan Win to Nil <em>— Tunisia failed to create vs Sweden until meaningless stage; Japan's defence compact and organised</em></div></div>
+  </div>
+  <!-- MATCH 13: Spain vs Saudi Arabia -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">H · MD2</span> Jun 21 · 17:00 · Atlanta</div>
+    <div class="match-teams"><div class="team-name">Spain</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Saudi Arabia</div></div>
+    <div class="probs"><span class="prob-pill prob-w">ESP 72%</span><span class="prob-pill prob-d">Draw 20%</span><span class="prob-pill prob-l">KSA 8%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag injury">Yamal STARTS — confirmed by De la Fuente; first full start</span><span class="factor-tag rank">Spain 0–0 Cape Verde — 26 shots, 0 goals; massive wake-up call</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: ESP 0–0 CPV — historic humiliation. Vozinha 8 saves. Williams and Morata both misfired. Saudi Arabia 1–1 URU — Al-Amri scored first, Araujo equalised. De la Fuente under pressure. Yamal confirmed to start — fundamentally changes Spain's attacking output. KSA beat Argentina in 2022; Al-Shehri remains a transition threat. But Spain's motivation and quality gap with Yamal unleashed should be decisive.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Spain Win <em>— Yamal starting is the game-changer; Spain's tiki-taka finds gaps vs KSA's 5-4-1 low block when at full creative capacity</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Spain Win &amp; Over 1.5 Goals <em>— Spain MUST score after Cape Verde disaster; Yamal + Williams unleashed is a different proposition</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Both Teams to Score <em>— Saudi Arabia always dangerous on transition; Al-Shehri vs Spain's high line echoes 2022 Argentina shock; 8% KSA win also possible</em></div></div>
+  </div>
+
+  <!-- MATCH 14: Belgium vs Iran -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">G · MD2</span> Jun 21 · 20:00 · Los Angeles</div>
+    <div class="match-teams"><div class="team-name">Belgium</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Iran</div></div>
+    <div class="probs"><span class="prob-pill prob-w">BEL 46%</span><span class="prob-pill prob-d">Draw 32%</span><span class="prob-pill prob-l">IRN 22%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Belgium 1–1 Egypt — De Bruyne invisible; golden gen in crisis</span><span class="factor-tag rank">Iran 2–2 NZL — comeback mentality; Taremi decisive in big moments</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: BEL 1–1 EGY — Ashour scored in 19'. Lukaku's 'goal' ruled own goal. De Bruyne invisible for long spells at 35. IRN 2–2 NZL — came from behind TWICE. Iran's 4-4-1-1 low block with devastating counter-attacks is perfectly designed to exploit Belgium's lack of defensive cover when pushing. Taremi's hold-up play and Gholizadeh's pace on the break make Iran genuinely dangerous. This is Belgium's hardest match.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Draw <em>— Iran's low block nullifies Belgium's creativity; De Bruyne's form crisis is real; 32% draw probability is fully justified by data</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Under 2.5 Goals <em>— Iran defend deep and compact; Belgium struggle to create vs organised low blocks; tight, tense game expected</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Iran Win <em>— Taremi fires, Belgium's ageing defence exposed on the counter; 22% — real, data-backed probability; biggest potential upset of MD2</em></div></div>
+  </div>
+
+  <!-- MATCH 15: Uruguay vs Cape Verde -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">H · MD2</span> Jun 21 · 23:00 · Miami</div>
+    <div class="match-teams"><div class="team-name">Uruguay</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Cape Verde</div></div>
+    <div class="probs"><span class="prob-pill prob-w">URU 60%</span><span class="prob-pill prob-d">Draw 26%</span><span class="prob-pill prob-l">CPV 14%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Cape Verde 0–0 Spain — Vozinha hero; belief through the roof</span><span class="factor-tag rank">Uruguay 1–1 KSA — showed character but slow in transitions</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: URU 1–1 KSA — Araujo equalised after falling behind. Uruguay showed character but were sluggish in transitions. CPV 0–0 ESP — enormous shock. Vozinha made 8 world-class saves. Cape Verde's belief is now real and their organisation is genuine. This is NOT the walkover Uruguay expected. Nunez's physicality should eventually tell but Cape Verde's defensive compactness makes this trickier than it looks.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Uruguay Win <em>— Nunez's physicality too much for Cape Verde's CB pairing; Valverde controls midfield; must-win pressure produces performance</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Uruguay Double Chance <em>— 86% Uruguay don't lose; Cape Verde struggle to score vs organised South American defences</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Draw <em>— Vozinha again the hero; Cape Verde's compact 4-4-2 is genuinely hard to break down; 26% probability is real after MD1 evidence</em></div></div>
+  </div>
+
+  <!-- MATCH 16: New Zealand vs Egypt -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">G · MD2</span> Jun 22 · 02:00 · Vancouver</div>
+    <div class="match-teams"><div class="team-name">New Zealand</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Egypt</div></div>
+    <div class="probs"><span class="prob-pill prob-w">NZL 26%</span><span class="prob-pill prob-d">Draw 34%</span><span class="prob-pill prob-l">EGY 40%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">NZL 2–2 Iran — Elijah Just brace; nobody predicted this</span><span class="factor-tag rank">Egypt 1–1 Belgium — Ashour's clinical finish showed quality</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: NZL 2–2 IRN — Elijah Just scored twice. New Zealand are a genuine threat — nobody saw this coming. EGY 1–1 BEL — Ashour's early goal showed clinical finishing quality. Egypt's system without Salah (retired) has adapted. This is the most evenly matched game of MD2. NZL's Just is the tournament's dark horse striker. Both sides need points badly — neither can afford to lose.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Egypt Win <em>— 56-rank gap still significant; Just unlikely to replicate Iran-level performance twice; Egypt's structure and experience decisive</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Both Teams to Score <em>— Just proved NZL can score; Egypt always score when motivated; genuinely open game</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Draw <em>— NZL's MD1 performance means this is now genuinely unpredictable; 34% probability — highest draw probability of MD2</em></div></div>
+  </div>
+  <!-- MATCH 17: Argentina vs Austria -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">J · MD2</span> Jun 22 · 18:00 · Dallas</div>
+    <div class="match-teams"><div class="team-name">Argentina</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Austria</div></div>
+    <div class="probs"><span class="prob-pill prob-w">ARG 62%</span><span class="prob-pill prob-d">Draw 24%</span><span class="prob-pill prob-l">AUT 14%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Messi hat-trick vs Algeria — first WC hat-trick; record-equalling</span><span class="factor-tag rank">Austria 3–1 Jordan — Alaba brace; structured and dangerous</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: ARG 3–0 ALG — Messi hat-trick, first WC hat-trick of his career, equals Klose's all-time record. Di Maria creative, Alvarez physical. Argentina looked at their 2022 best. AUT 3–1 JOR — Sabitzer, Alaba (2). Austria structured and sharp from set pieces. BUT Austria have never beaten Argentina in competitive football. Messi at full fitness is a different level. ARG's makeshift defence (Balerdi, Foyth out) still a concern vs Alaba's delivery.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Argentina Win <em>— Messi in hat-trick form is unstoppable; Austria's counter-plan won't be enough vs ARG's quality over 90 mins</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Argentina Double Chance <em>— 86% probability ARG don't lose; covers Alaba set-piece shock; solid structural pick</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Both Teams to Score <em>— Alaba's set-piece delivery is deadly; ARG's makeshift defence (no Balerdi/Foyth) could be punished; 24% draw also possible</em></div></div>
+  </div>
+
+  <!-- MATCH 18: France vs Iraq -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">I · MD2</span> Jun 22 · 22:00 · Philadelphia</div>
+    <div class="match-teams"><div class="team-name">France</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Iraq</div></div>
+    <div class="probs"><span class="prob-pill prob-w">FRA 90%</span><span class="prob-pill prob-d">Draw 8%</span><span class="prob-pill prob-l">IRQ 2%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★★</span></div>
+    <div class="key-factors"><span class="factor-tag rank">France 3–1 Senegal — Mbappe brace; clinical and dominant</span><span class="factor-tag rank">Iraq 1–4 Norway — defence completely overrun; conceded 4</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: FRA 3–1 SEN — Mbappe brace, Barcola, Olise excellent. France's depth is the deepest in the tournament. IRQ 1–4 NOR — Haaland brace, Iraq gave up 4. Aymen Hussein scored but their defence was repeatedly torn apart. France vs Iraq is now about damage limitation for Iraq and goal accumulation for France. Mbappe has 2 goals, is motivated. GD consideration means France will push hard from start.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">France Win &amp; Over 3.5 Goals <em>— France's attacking firepower vs Iraq's exposed defence; GD consideration means France push hard</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">France Win &amp; Over 2.5 Goals <em>— one of the tournament's highest-probability bets; Iraq conceded 4 in MD1</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Mbappe to Score Anytime <em>— 2 already, vs perfect opposition, fully motivated; near-certainty at current form levels</em></div></div>
+  </div>
+
+  <!-- MATCH 19: Norway vs Senegal -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">I · MD2</span> Jun 23 · 01:00 · New Jersey</div>
+    <div class="match-teams"><div class="team-name">Norway</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Senegal</div></div>
+    <div class="probs"><span class="prob-pill prob-w">NOR 44%</span><span class="prob-pill prob-d">Draw 26%</span><span class="prob-pill prob-l">SEN 30%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Norway 4–1 Iraq — Haaland 2; Odegaard controlling; electric form</span><span class="factor-tag rank">Senegal 1–3 France — Sarr missed open goal; system not clicking</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: NOR 4–1 IRQ — Haaland brace, Odegaard creative, Sorloth and others added. Norway look like a top-8 side. SEN 1–3 FRA — Sarr missed an open goal. Dia and Sarr failed to connect. Senegal's system is still not clicking without a clear creative hub. This is now a MUST-WIN for Senegal — a loss eliminates them. Norway know a win locks up 2nd place. Haaland dominates physically vs any CB pairing. The defining match of Group I for 2nd place.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Norway Win <em>— Haaland dominates physically vs Senegal's CBs; Odegaard's vision creates; Norway on the crest of a wave</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Both Teams to Score <em>— Senegal must attack (elimination pressure); Dia will score if given space; Norway will counter through Haaland</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Senegal Win <em>— ranked #15 vs #31; must-win desperation; Dia and Sarr more motivated than in MD1; 30% — the match of the round</em></div></div>
+  </div>
+
+  <!-- MATCH 20: Jordan vs Algeria -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">J · MD2</span> Jun 23 · 04:00 · Santa Clara</div>
+    <div class="match-teams"><div class="team-name">Jordan</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Algeria</div></div>
+    <div class="probs"><span class="prob-pill prob-w">JOR 18%</span><span class="prob-pill prob-d">Draw 28%</span><span class="prob-pill prob-l">ALG 54%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Algeria 0–3 Argentina — Mahrez completely anonymous; pride wounded</span><span class="factor-tag rank">Jordan 1–3 Austria — debut lesson; Almardi scored consolation</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: JOR 1–3 AUT — Jordan's debut was a learning experience. Almardi scored a consolation showing some spirit. ALG 0–3 ARG — Mahrez was isolated and completely overwhelmed by Messi's brilliance. Algeria face elimination if they lose here. Jordan are effectively out — need a massive GD swing. Algeria's pride and their 3rd-place route alive if they win. Mahrez motivated to respond after humiliation.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Algeria Win <em>— Mahrez motivated after humiliation; Jordan's debut exhaustion; Bounedjah and Amoura add firepower</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Algeria Double Chance <em>— 82% Algeria don't lose vs a first-WC Jordan; class difference should tell on fresh legs</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Draw <em>— Jordan showed they can score; Algeria's confidence is shattered after Messi hat-trick; 28% probability is real</em></div></div>
+  </div>
+  <!-- MATCH 21: Portugal vs Uzbekistan -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">K · MD2</span> Jun 23 · 18:00 · Houston</div>
+    <div class="match-teams"><div class="team-name">Portugal</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Uzbekistan</div></div>
+    <div class="probs"><span class="prob-pill prob-w">POR 85%</span><span class="prob-pill prob-d">Draw 11%</span><span class="prob-pill prob-l">UZB 4%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★★</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Portugal 1–1 DR Congo — Ronaldo ineffective; MUST WIN now</span><span class="factor-tag rank">Uzbekistan scored historic first WC goal but lost 1–3</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: POR 1–1 COD — Neves scored early, Wissa equalised before HT. Ronaldo zero shots on target. Bruno Fernandes and Leao must take more responsibility. UZB 1–3 COL — Fayzullaev scored their historic first WC goal but were largely outclassed. Portugal's squad depth is vastly superior. Key question: does Martinez drop Ronaldo for Goncalo Ramos? Ramos offers mobility and clinical finishing Uzbekistan cannot handle. Portugal MUST win big to close the GD gap on Colombia.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Portugal Win &amp; Over 3.5 Goals <em>— need GD; Leao, Bruno, Ramos vs domestic-league defence; motivated after DR Congo disaster</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Portugal Win &amp; Over 2.5 Goals <em>— very high probability; Uzbekistan conceded 3 to Colombia in MD1</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Ramos to Score (if Ronaldo benched) <em>— Martinez may finally drop Ronaldo; Ramos's pace and movement is what Uzbekistan cannot handle defensively</em></div></div>
+  </div>
+
+  <!-- MATCH 22: England vs Ghana -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">L · MD2</span> Jun 23 · 21:00 · Boston</div>
+    <div class="match-teams"><div class="team-name">England</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Ghana</div></div>
+    <div class="probs"><span class="prob-pill prob-w">ENG 72%</span><span class="prob-pill prob-d">Draw 18%</span><span class="prob-pill prob-l">GHA 10%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">England 4–2 Croatia — Kane brace, Bellingham &amp; Rashford; electric</span><span class="factor-tag rank">Ghana 1–0 Panama — scrappy; Semenyo ineffective; Yirenkyi 90+</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: ENG 4–2 CRO — Kane first-half brace, Bellingham scored after HT, Rashford finished it. England were open defensively (conceded 2 to Croatia via Baturina and Musa) but clinical going forward. GHA 1–0 PAN — won but barely. Yirenkyi in 90+. Ghana's defensive organisation is disciplined — they'll set up a low block. Saka starts (Achilles managed but he looked sharp). England should win but Tuchel may tighten up defensively after the Croatia scare.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">England Win <em>— Kane leads, Bellingham creates, Saka delivers; Ghana's low block will eventually yield to England's quality</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">England Win &amp; Over 1.5 Goals <em>— England scored 4 in MD1; Ghana's defence not strong enough to keep clean sheet for 90 mins</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">England Win to Nil <em>— Ghana created nothing vs Panama; Tuchel likely to tighten defensively after Croatia opened England up</em></div></div>
+  </div>
+
+  <!-- MATCH 23: Panama vs Croatia -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">L · MD2</span> Jun 24 · 00:00 · Toronto</div>
+    <div class="match-teams"><div class="team-name">Panama</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">Croatia</div></div>
+    <div class="probs"><span class="prob-pill prob-w">PAN 16%</span><span class="prob-pill prob-d">Draw 26%</span><span class="prob-pill prob-l">CRO 58%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★★☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Croatia 2–4 England — Musa &amp; Baturina scored quality goals</span><span class="factor-tag rank">Panama 0–1 Ghana — failed to score vs rank-73 Ghana</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: PAN 0–1 GHA — failed to score vs rank-73 Ghana. Panama's attack is CONCACAF-standard only. CRO 2–4 ENG — Baturina and Musa scored quality goals showing Croatia CAN attack, but their defence leaked badly vs England's press. Against Panama's disciplined but very limited attack, Croatia should be far more comfortable. Modric played 90 mins at 40 — he will again. This is effectively Croatia's must-win to stay in the tournament.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Croatia Win <em>— Modric/Kovacic/Brozovic control midfield vs Panama's workmanlike block; Musa proved he can score</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Croatia Win &amp; Over 1.5 Goals <em>— Croatia must push for multiple goals; Panama cannot create enough to threaten</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Croatia Win to Nil <em>— Panama failed to score vs rank-73 Ghana; Croatia's defence, though leaky vs England, organises against weaker opposition</em></div></div>
+  </div>
+
+  <!-- MATCH 24: Colombia vs DR Congo -->
+  <div class="match-card">
+    <div class="match-date"><span class="match-group-tag">K · MD2</span> Jun 24 · 03:00 · Guadalajara</div>
+    <div class="match-teams"><div class="team-name">Colombia</div><div class="score-display"><span class="score-num">?</span><span class="score-dash">–</span><span class="score-num">?</span></div><div class="team-name away">DR Congo</div></div>
+    <div class="probs"><span class="prob-pill prob-w">COL 56%</span><span class="prob-pill prob-d">Draw 26%</span><span class="prob-pill prob-l">COD 18%</span></div>
+    <div class="conf-row"><span class="conf-label">Confidence:</span><span class="conf-stars">★★★☆☆</span></div>
+    <div class="key-factors"><span class="factor-tag rank">Colombia 3–1 UZB — Diaz, Munoz, Campaz brilliant</span><span class="factor-tag rank">DR Congo 1–1 POR — Wissa equalised; historic result proves physical quality</span></div>
+    <hr class="pred-divider">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:0.4rem;font-style:italic;">MD1: COL 3–1 UZB — Munoz opened, Diaz clinical, Campaz late sub sealed it. Colombia looked every inch a top-16 side. COD 1–1 POR — Wissa's equaliser shocked the world. Congo's physicality and direct style caused Portugal real problems. Colombia face a different beast than Uzbekistan. Wissa (Nottm Forest) and Chadrac Akolo provide genuine quality. Colombia's Arias, Diaz and James combination is superior — but this is not a walkover.</div>
+    <div class="pred-row"><span class="pred-badge pred-main">MAIN</span><div class="pred-text">Colombia Win <em>— Diaz's movement and James's vision too much for Congo's physical but limited midfield; COL best XI clearly superior</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-safe">SAFE ✓</span><div class="pred-text">Colombia Double Chance <em>— 82% Colombia don't lose; DR Congo won't replicate Portugal-level shock vs better, more prepared opposition</em></div></div>
+    <div class="pred-row"><span class="pred-badge pred-alt">ALT</span><div class="pred-text">Both Teams to Score <em>— Wissa proved Congo can score; Colombia won't park the bus; Akolo a constant threat on the break</em></div></div>
+  </div>
+
+</div><!-- end matches-section -->
+<!-- MD2 Standings After MD1 -->
+<div class="section-title" style="margin-top:1.5rem"><i class="ti ti-table"></i> Standings After Matchday 1</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:0.8rem;margin-bottom:1rem;">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP A</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Mexico</span> 3pts +2 &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">South Korea</span> 3pts +1<br><span class="rank-badge rank-3">3</span> <span style="color:var(--red)">Czechia</span> 0pts -1 &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">South Africa</span> 0pts -2</div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP B — ALL LEVEL</div><div style="font-size:12px;line-height:1.8;color:var(--muted);">Canada 1pt · Bosnia 1pt · Qatar 1pt · Switzerland 1pt<br><span style="color:var(--orange)">Completely open — any two can qualify</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP C</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Scotland 3pts</span> (!) &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Brazil 1pt</span><br><span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Morocco 1pt</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Haiti 0pts</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP D</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Australia 3pts +2</span> &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">USA 3pts +3</span><br><span class="rank-badge rank-3">3</span> <span style="color:var(--red)">Turkey 0pts -2</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Paraguay 0pts -3</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP E</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Ivory Coast 3pts</span> &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Germany 3pts +6</span><br><span class="rank-badge rank-3">3</span> <span style="color:var(--red)">Ecuador 0pts -1</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Curacao 0pts -6</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP F</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Sweden 3pts +4</span> &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Japan 1pt</span><br><span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Netherlands 1pt</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Tunisia 0pts -4</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP G — ALL LEVEL</div><div style="font-size:12px;line-height:1.8;color:var(--muted);">Belgium 1pt · Egypt 1pt · Iran 1pt · New Zealand 1pt<br><span style="color:var(--orange)">NZL 2–2 IRN — total chaos; anything possible</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP H — ALL LEVEL</div><div style="font-size:12px;line-height:1.8;color:var(--muted);">Spain 1pt · Uruguay 1pt · KSA 1pt · Cape Verde 1pt<br><span style="color:var(--red)">Spain 0–0 CPV — all four teams can still qualify</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP I</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">France 3pts +2</span> &nbsp; <span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Norway 3pts +3</span><br><span class="rank-badge rank-3">3</span> <span style="color:var(--red)">Senegal 0pts -2</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Iraq 0pts -3</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP J</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Argentina 3pts +3</span> &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Austria 3pts +2</span><br><span class="rank-badge rank-3">3</span> <span style="color:var(--red)">Algeria 0pts -3</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Jordan 0pts -2</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP K</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">Colombia 3pts +2</span> &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">DR Congo 1pt</span><br><span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Portugal 1pt</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Uzbekistan 0pts</span></div></div>
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:0.7rem 1rem;"><div style="font-size:11px;font-weight:700;color:var(--accent);letter-spacing:0.8px;margin-bottom:5px;">GROUP L</div><div style="font-size:12px;line-height:1.8;"><span class="rank-badge rank-1">1</span> <span style="color:var(--gold)">England 3pts +2</span> &nbsp; <span class="rank-badge rank-2">2</span> <span style="color:var(--silver)">Ghana 3pts +1</span><br><span class="rank-badge rank-3">3</span> <span style="color:var(--red)">Croatia 0pts -2</span> &nbsp; <span class="rank-badge rank-4">4</span> <span style="color:var(--muted)">Panama 0pts -1</span></div></div>
+</div>
+
+<div class="uncertainty-box">
+  <div class="uncertainty-title"><i class="ti ti-alert-circle"></i> MD2 Key Themes &amp; Summary</div>
+  <div class="uncertainty-text">
+    <strong style="color:var(--text)">Biggest MD1 shocks reshaping MD2:</strong> Spain 0–0 Cape Verde (Group H wide open), Portugal 1–1 DR Congo (Group K flipped), Australia 2–0 Turkey (Group D scrambled), NZL 2–2 Iran (Group G explosive). <br><br>
+    <strong style="color:var(--text)">Safest MD2 bets (data-backed):</strong> Brazil over Haiti, France over Iraq, Portugal over Uzbekistan, Ecuador over Curacao. <br><br>
+    <strong style="color:var(--text)">Highest-risk MD2 matches:</strong> Belgium vs Iran (De Bruyne crisis vs Taremi counter-threat), Germany vs Ivory Coast (7–1 vs Curacao tells us nothing about this), Netherlands vs Sweden (Isak/Gykeres vs exposed NED high line), Norway vs Senegal (must-win desperation from Senegal). <br><br>
+    <strong style="color:var(--text)">Single biggest variable:</strong> Pulisic's calf injury — his status determines whether USA or Australia control Group D and potentially changes the entire knockout bracket.
+  </div>
+</div>
+
+</div><!-- end md2 section -->
+
 <div id="summary" class="section">
   <div class="section-title"><i class="ti ti-trophy" aria-hidden="true"></i> Full Tournament Summary</div>
 
@@ -989,447 +1486,23 @@
 </div>
 
 <script>
-/* ── Nav ── */
 function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  var el = document.getElementById(id); if (el) el.classList.add('visible');
-  var btn = document.querySelector('[data-section="' + id + '"]'); if (btn) btn.classList.add('active');
+  document.querySelectorAll('.section').forEach(function(s) {
+    s.classList.remove('visible');
+  });
+  document.querySelectorAll('.nav-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  var el  = document.getElementById(id);
+  var btn = document.querySelector('[data-section="' + id + '"]');
+  if (el)  el.classList.add('visible');
+  if (btn) btn.classList.add('active');
 }
-
-/* ── Prediction data keyed by "GROUP · MDx · Date · HH:MM" ── */
-const PREDS = {
-  /* GROUP A */
-  "A · MD1 · Jun 11 · 20:00": [
-    ["main","Mexico Win & Over 1.5 Goals","46-rank gap + host crowd; dominant opener expected"],
-    ["safe","Mexico Double Chance","covers any South Africa shock"],
-    ["alt", "Mexico Win to Nil","RSA scored in 0 of last 4 away games"]
-  ],
-  "A · MD1 · Jun 12 · 03:00": [
-    ["main","South Korea Win","Son's elite form, must-win mentality vs Czech block"],
-    ["safe","Both Teams to Score","Czech attack not toothless; Son almost always scores"],
-    ["alt", "Draw","Czech defensive organisation could frustrate KOR — 30% prob"]
-  ],
-  "A · MD2 · Jun 18 · 17:00": [
-    ["main","Czechia Win","must-win pressure, 19-rank advantage over RSA"],
-    ["safe","Czechia Double Chance","RSA unlikely to beat European opposition"],
-    ["alt", "Over 2.5 Goals","both sides need points; open, attacking game expected"]
-  ],
-  "A · MD2 · Jun 19 · 02:00": [
-    ["main","Draw","tight tactical match; South Korea compact, MEX GK gap"],
-    ["safe","Under 3.5 Goals","cautious game with both sides content on a point"],
-    ["alt", "Mexico Win","home crowd lifts MEX; 40% probability"]
-  ],
-  "A · MD3 · Jun 25 · 02:00 (RSA)": [
-    ["main","South Korea Win","must qualify; Son motivated vs weakest side"],
-    ["safe","South Korea Double Chance","covers draw if KOR rotate"],
-    ["alt", "South Korea Win to Nil","RSA attack poor all tournament"]
-  ],
-  "A · MD3 · Jun 25 · 02:00 (CZE)": [
-    ["main","Mexico Win","clinch top spot; home support, Czechia may have nothing left"],
-    ["safe","Mexico Double Chance","Czech resilience means draw is possible"],
-    ["alt", "Draw","if Czechia still chase points, they dig in"]
-  ],
-  /* GROUP B */
-  "B · MD1 · Jun 12 · 20:00": [
-    ["main","Canada Win","home crowd, youthful energy vs ageing Bosnia spine"],
-    ["safe","Both Teams to Score","Džeko can always punish; Canada attack-minded"],
-    ["alt", "Draw","Bosnia's experience could frustrate Canada's WC debut nerves"]
-  ],
-  "B · MD1 · Jun 13 · 20:00": [
-    ["main","Switzerland Win","37-rank gap; Qatar conceded 7 in 3 games at 2022"],
-    ["safe","Switzerland Double Chance","SUI or draw — essentially no-lose"],
-    ["alt", "Switzerland Win to Nil","Qatar struggle to create; Swiss defence elite"]
-  ],
-  "B · MD2 · Jun 18 · 20:00": [
-    ["main","Switzerland Win","superior squad depth and defensive solidity"],
-    ["safe","Switzerland Double Chance","84% no-loss probability"],
-    ["alt", "Under 2.5 Goals","Bosnia defend deep; low-scoring game likely"]
-  ],
-  "B · MD2 · Jun 18 · 23:00": [
-    ["main","Canada Win","must-win to stay on track; Qatar concede easily"],
-    ["safe","Canada Win & Over 1.5 Goals","very high probability, good value"],
-    ["alt", "Canada Win to Nil","Qatar's attack non-threatening away from home"]
-  ],
-  "B · MD3 · Jun 24 · 20:00 (BIH)": [
-    ["main","Bosnia Win","Džeko pride game; Qatar eliminated and deflated"],
-    ["safe","Both Teams to Score","wide-open dead rubber; goals expected"],
-    ["alt", "Draw","Bosnia inconsistent; Qatar can manage for a point"]
-  ],
-  "B · MD3 · Jun 24 · 20:00 (SUI)": [
-    ["main","Draw","both already qualified; tactical, measured contest"],
-    ["safe","Under 2.5 Goals","neither side risks key players in group clincher"],
-    ["alt", "Switzerland Win","if both sides want top spot; SUI rank advantage"]
-  ],
-  /* GROUP C */
-  "C · MD1 · Jun 13 · 23:00": [
-    ["main","Brazil Win","Vinicius/Raphinha quality vs Morocco's defensive shape"],
-    ["safe","Draw","30% chance; Morocco's 2022 SF defence is world-class"],
-    ["alt", "Morocco Win or Draw","serious upset threat given Brazil injury crisis"]
-  ],
-  "C · MD1 · Jun 14 · 02:00": [
-    ["main","Scotland Win","39-rank gap; Scotland organised and experienced"],
-    ["safe","Scotland Double Chance","Haiti debut nerves compound the quality gap"],
-    ["alt", "Scotland Win to Nil","Haiti scored in just 2 of last 8 internationals"]
-  ],
-  "C · MD2 · Jun 19 · 23:00": [
-    ["main","Morocco Win","rank and quality gap; Scotland struggle vs elite defensive sides"],
-    ["safe","Morocco Double Chance","Morocco rarely lose in group play"],
-    ["alt", "Draw","Scotland's set-piece threat is genuine — 28% probability"]
-  ],
-  "C · MD2 · Jun 20 · 01:30": [
-    ["main","Brazil Win & Over 2.5 Goals","76-rank gap; goal-fest almost certain"],
-    ["safe","Brazil Win & Over 1.5 Goals","one of the safest bets in the tournament"],
-    ["alt", "Brazil to score 4+ Goals","Haiti's defence is the weakest in the tournament"]
-  ],
-  "C · MD3 · Jun 24 · 23:00 (SCO)": [
-    ["main","Brazil Win","Vinicius/Raphinha too quick for Scotland's back line"],
-    ["safe","Brazil Double Chance","even rotated Brazil overwhelms Scotland"],
-    ["alt", "Over 2.5 Goals","Scotland must attack to chase a miracle qualification"]
-  ],
-  "C · MD3 · Jun 24 · 23:00 (MAR)": [
-    ["main","Morocco Win & Over 1.5 Goals","may need GD to pip Brazil; attacking intent"],
-    ["safe","Morocco Double Chance","94% Morocco don't lose this"],
-    ["alt", "Morocco Win to Nil","Haiti failed to score in 6 of last 10 games"]
-  ],
-  /* GROUP D */
-  "D · MD1 · Jun 13 · 02:00": [
-    ["main","USA Win","Pulisic leads in front of home crowd; Enciso absence hurts PAR"],
-    ["safe","USA Double Chance","host nation rarely fails to at least draw opener"],
-    ["alt", "Both Teams to Score","Paraguay's physical style will test the USA defence"]
-  ],
-  "D · MD1 · Jun 14 · 05:00": [
-    ["main","Draw","almost impossible to separate — only 5-rank gap, similar styles"],
-    ["safe","Both Teams to Score","both attack-minded; set-piece threats on both sides"],
-    ["alt", "Türkiye Win","Euro 2024 QF pedigree; slight big-game experience edge"]
-  ],
-  "D · MD2 · Jun 19 · 20:00": [
-    ["main","USA Win","home advantage decisive; superior squad depth"],
-    ["safe","USA Double Chance","USA concede rarely at home"],
-    ["alt", "Draw","Australia's resilience should not be underestimated"]
-  ],
-  "D · MD2 · Jun 20 · 04:00": [
-    ["main","Türkiye Win","Euro 2024 quality vs CONMEBOL qualifier; 19-rank gap"],
-    ["safe","Türkiye Double Chance","Paraguay without Enciso severely limited"],
-    ["alt", "Türkiye Win to Nil","Paraguay's attack toothless without their creator"]
-  ],
-  "D · MD3 · Jun 26 · 03:00 (PAR)": [
-    ["main","Australia Win","need result to qualify; Paraguay eliminated and flat"],
-    ["safe","Both Teams to Score","Paraguay's physical game always creates chances"],
-    ["alt", "Draw","Paraguay pride; Australia may already be mathematically safe"]
-  ],
-  "D · MD3 · Jun 26 · 03:00 (TUR)": [
-    ["main","Draw","already-qualified sides; tactical, cautious match"],
-    ["safe","Under 2.5 Goals","neither side risks anything in group clincher"],
-    ["alt", "USA Win","want top spot for favourable knockout draw"]
-  ],
-  /* GROUP E */
-  "E · MD1 · Jun 14 · 18:00": [
-    ["main","Germany Win & Over 2.5 Goals","72-rank chasm; GER will want a big GD early"],
-    ["safe","Germany Win & Over 1.5 Goals","one of the surest bets in the tournament"],
-    ["alt", "Germany to score 3+ Goals","Curaçao lack professional quality to resist"]
-  ],
-  "E · MD1 · Jun 15 · 00:00": [
-    ["main","Ecuador Win","Copa América form, 10-rank advantage, physical style suits"],
-    ["safe","Both Teams to Score","Ivory Coast AFCON winners; neither keeps a clean sheet easily"],
-    ["alt", "Draw","genuinely competitive — 30% probability"]
-  ],
-  "E · MD2 · Jun 20 · 21:00": [
-    ["main","Germany Win","superior quality even with injuries; Müller/Wirtz lead"],
-    ["safe","Germany Double Chance","80% chance Germany don't lose; covers draw"],
-    ["alt", "Draw","Ivory Coast AFCON holders; pacey counter-attack can hurt GER"]
-  ],
-  "E · MD2 · Jun 21 · 01:00": [
-    ["main","Ecuador Win & Over 2.5 Goals","Curaçao outclassed; ECU attack hungry for goals"],
-    ["safe","Ecuador Win & Over 1.5 Goals","very high probability combination"],
-    ["alt", "Ecuador Win to Nil","Curaçao scored in only 3 of last 8 away games"]
-  ],
-  "E · MD3 · Jun 25 · 21:00 (ECU)": [
-    ["main","Germany Win","ECU will struggle to contain the Müller/Havertz combination"],
-    ["safe","Germany Double Chance","covers ECU shock; Germany rarely lose this type"],
-    ["alt", "Draw","Ecuador could park the bus if 2nd place is already secured"]
-  ],
-  "E · MD3 · Jun 25 · 21:00 (CUW)": [
-    ["main","Ivory Coast Win","may need to win to advance; Curaçao weakest in group"],
-    ["safe","Ivory Coast Double Chance","82% probability CIV don't lose"],
-    ["alt", "Ivory Coast Win & Over 1.5 Goals","CIV need GD boost; attacking approach"]
-  ],
-  /* GROUP F */
-  "F · MD1 · Jun 14 · 21:00": [
-    ["main","Netherlands Win","Gakpo/Depay/Van Dijk quality; Japan's press is elite though"],
-    ["safe","Both Teams to Score","Japan always score; NED defence missing Timber"],
-    ["alt", "Draw","Japan have 24% win chance; tactical battle on the cards"]
-  ],
-  "F · MD1 · Jun 15 · 03:00": [
-    ["main","Sweden Win","7-rank advantage; Isak & Kulusevski vs Tunisia's rigid block"],
-    ["safe","Sweden Double Chance","Sweden rarely lose to African opposition"],
-    ["alt", "Under 2.5 Goals","Tunisia defend very deep; low-scoring game likely"]
-  ],
-  "F · MD2 · Jun 20 · 18:00": [
-    ["main","Netherlands Win","post-Ibra Sweden lacks cutting edge against elite sides"],
-    ["safe","Netherlands Double Chance","85% no-loss probability; covers draw"],
-    ["alt", "Netherlands Win to Nil","Sweden's attack limited without a proven striker"]
-  ],
-  "F · MD2 · Jun 21 · 05:00": [
-    ["main","Japan Win","must qualify; Mitoma/Doan pace destroys Tunisia's low block"],
-    ["safe","Japan Double Chance","Japan rarely lose vs non-elite opposition"],
-    ["alt", "Japan Win to Nil","Tunisia scored once in all 3 games at 2022"]
-  ],
-  "F · MD3 · Jun 26 · 00:00 (TUN)": [
-    ["main","Netherlands Win","Tunisia eliminated and deflated; NED won't ease off"],
-    ["safe","Netherlands Double Chance","85% probability NED don't lose"],
-    ["alt", "Over 2.5 Goals","Tunisia attack to avoid humiliation; NED won't coast"]
-  ],
-  "F · MD3 · Jun 26 · 00:00 (JPN)": [
-    ["main","Japan Win","need to secure 2nd; Sweden also need result — open game"],
-    ["safe","Both Teams to Score","both must attack; high-tempo clash expected"],
-    ["alt", "Draw","if Sweden equalise, Japan may sit back — 28% probability"]
-  ],
-  /* GROUP G */
-  "G · MD1 · Jun 15 · 20:00": [
-    ["main","Belgium Win","De Bruyne & Lukaku too much for Egyptian defence"],
-    ["safe","Belgium Double Chance","86% probability BEL don't lose"],
-    ["alt", "Belgium Win to Nil","Egypt struggled to score away in AFCON qualifying"]
-  ],
-  "G · MD1 · Jun 16 · 02:00": [
-    ["main","Iran Win","64-rank gap; Taremi & Gholizadeh too good for NZL"],
-    ["safe","Iran Win & Over 1.5 Goals","very high probability combination"],
-    ["alt", "Iran Win to Nil","New Zealand scored 0 in 4 of last 6 internationals"]
-  ],
-  "G · MD2 · Jun 21 · 20:00": [
-    ["main","Belgium Win","quality edge, but Iran's low-block will make it tight"],
-    ["safe","Under 2.5 Goals","Iran's rigid 4-4-2 block suppresses xG; low-scoring"],
-    ["alt", "Draw","Iran held Spain to a draw in 2018; Belgium's golden gen fading"]
-  ],
-  "G · MD2 · Jun 22 · 02:00": [
-    ["main","Egypt Win","56-rank gap; Egypt need the points desperately to stay alive"],
-    ["safe","Egypt Double Chance","NZL have limited WC-level quality"],
-    ["alt", "Draw","New Zealand unknown quantity; unlikely but possible at 28%"]
-  ],
-  "G · MD3 · Jun 27 · 04:00 (EGY)": [
-    ["main","Draw","2nd-place decider; both sides cautious — 35% draw probability"],
-    ["safe","Under 2.5 Goals","both defensive by nature; tight margins expected"],
-    ["alt", "Iran Win","Taremi decisive in big games; ranked higher than Egypt"]
-  ],
-  "G · MD3 · Jun 27 · 04:00 (NZL)": [
-    ["main","Belgium Win","76-rank gap; NZL outclassed at this level"],
-    ["safe","Belgium Win & Over 1.5 Goals","near-certainty Belgium score 2+"],
-    ["alt", "Belgium Win to Nil","NZL unable to create against even average defences"]
-  ],
-  /* GROUP H */
-  "H · MD1 · Jun 15 · 17:00": [
-    ["main","Spain Win & Over 2.5 Goals","65-rank gap; Spain will make a statement opener"],
-    ["safe","Spain Win & Over 1.5 Goals","one of the safest bets of the group stage"],
-    ["alt", "Spain to score 3+ Goals","Yamal/Williams/Morata rotation will punish CPV"]
-  ],
-  "H · MD1 · Jun 15 · 23:00": [
-    ["main","Uruguay Win","Núñez/Valverde/Bentancur quality vs disrupted Saudi side"],
-    ["safe","Uruguay Double Chance","KSA coaching chaos is a real disruption factor"],
-    ["alt", "Draw","Saudi Arabia beat Argentina in 2022; upset threat always real"]
-  ],
-  "H · MD2 · Jun 21 · 17:00": [
-    ["main","Spain Win","class difference enormous; KSA chaotic after coaching change"],
-    ["safe","Spain Win & Over 1.5 Goals","Spain rarely fail to score 2+ vs weak opposition"],
-    ["alt", "Both Teams to Score","KSA's 2022 Argentina upset shows they always threaten"]
-  ],
-  "H · MD2 · Jun 21 · 23:00": [
-    ["main","Uruguay Win","experienced squad; Cape Verde's first WC debut pressure"],
-    ["safe","Uruguay Double Chance","Uruguay's defensive solidity well-established"],
-    ["alt", "Both Teams to Score","Cape Verde AFCON pedigree — they'll cause problems"]
-  ],
-  "H · MD3 · Jun 27 · 01:00 (CPV)": [
-    ["main","Draw","both eliminated; low motivation; dead rubber likely"],
-    ["safe","Under 2.5 Goals","both teams have nothing meaningful to play for"],
-    ["alt", "Saudi Arabia Win","Saudi pride game; want to finish above last place"]
-  ],
-  "H · MD3 · Jun 27 · 01:00 (URU)": [
-    ["main","Spain Win","top spot secured; Spain maintain their momentum"],
-    ["safe","Spain Double Chance","covers draw; Spain won't drop points carelessly"],
-    ["alt", "Draw","Uruguay want 2nd place; will defend deep and counter"]
-  ],
-  /* GROUP I */
-  "I · MD1 · Jun 16 · 20:00": [
-    ["main","France Win","Mbappe vs transitioning Senegal; France depth overwhelming"],
-    ["safe","France Double Chance","83% France don't lose; solid pick"],
-    ["alt", "Draw","Senegal ranked #15 — not a mismatch; 28% probability"]
-  ],
-  "I · MD1 · Jun 16 · 23:00": [
-    ["main","Norway Win & Over 2.5 Goals","Haaland against rank-57 Iraq is near-certainty"],
-    ["safe","Norway Win & Over 1.5 Goals","one of the strongest bets in the group stage"],
-    ["alt", "Norway Win to Nil","Iraq's attack historically weak; 40-year WC absence"]
-  ],
-  "I · MD2 · Jun 22 · 22:00": [
-    ["main","France Win & Over 2.5 Goals","France vs 40-year WC absentee; goal-fest"],
-    ["safe","France Win & Over 1.5 Goals","near-certainty; very high probability"],
-    ["alt", "France to score 3+ Goals","Mbappe/Dembele rotation will punish Iraq"]
-  ],
-  "I · MD2 · Jun 23 · 01:00": [
-    ["main","Norway Win","Haaland's xG output covers the 16-rank deficit vs Senegal"],
-    ["safe","Both Teams to Score","Senegal ranked #15; Dia & Sarr will respond"],
-    ["alt", "Senegal Win","ranked 16 places above Norway; form-based upset is plausible"]
-  ],
-  "I · MD3 · Jun 26 · 20:00 (NOR)": [
-    ["main","Draw","both qualified; may manage intensity; Haaland vs Mbappe show"],
-    ["safe","Both Teams to Score","Haaland will score; Mbappe will score — law of averages"],
-    ["alt", "France Win","if France want top spot and a perfect group record; 37%"]
-  ],
-  "I · MD3 · Jun 26 · 20:00 (SEN)": [
-    ["main","Senegal Win","pride game; Dia/Sarr/Diatta too strong for Iraq"],
-    ["safe","Senegal Double Chance","84% probability SEN don't lose this"],
-    ["alt", "Both Teams to Score","Iraq will nick a consolation; Senegal won't defend deep"]
-  ],
-  /* GROUP J */
-  "J · MD1 · Jun 17 · 02:00": [
-    ["main","Argentina Win","Messi/Di María/Alvarez quality despite defensive injuries"],
-    ["safe","Argentina Double Chance","Algeria capable of a draw but not a win here"],
-    ["alt", "Both Teams to Score","Algeria's Mahrez/Aouar can exploit Argentina's makeshift defence"]
-  ],
-  "J · MD1 · Jun 17 · 05:00": [
-    ["main","Austria Win","Sabitzer/Alaba-led AUT too strong for Jordan's debut"],
-    ["safe","Austria Win & Over 1.5 Goals","39-rank gap; goals expected"],
-    ["alt", "Austria Win to Nil","Jordan yet to score vs European opposition in 2026"]
-  ],
-  "J · MD2 · Jun 22 · 18:00": [
-    ["main","Argentina Win","Messi class decisive; Austria lack WC experience"],
-    ["safe","Argentina Double Chance","84% probability ARG don't lose"],
-    ["alt", "Draw","Austria are underrated; could contain Argentina if organised"]
-  ],
-  "J · MD2 · Jun 23 · 04:00": [
-    ["main","Algeria Win","Mahrez on form; Jordan's WC debut learning curve steep"],
-    ["safe","Algeria Double Chance","80% Algeria don't lose this match"],
-    ["alt", "Draw","Jordan's regional support may boost motivation — 28% prob"]
-  ],
-  "J · MD3 · Jun 28 · 03:00 (ALG)": [
-    ["main","Draw","almost impossible to separate — 30% draw probability makes this open"],
-    ["safe","Under 2.5 Goals","both defensive under pressure; cautious approach"],
-    ["alt", "Algeria Win","Mahrez decisive in big moments; CAF qualification pedigree"]
-  ],
-  "J · MD3 · Jun 28 · 03:00 (JOR)": [
-    ["main","Argentina Win & Over 1.5 Goals","60-rank gap; Argentina want a big GD boost"],
-    ["safe","Argentina Win","near-certainty even with rotation"],
-    ["alt", "Argentina Win to Nil","Jordan failed to score vs any top-50 side this year"]
-  ],
-  /* GROUP K */
-  "K · MD1 · Jun 17 · 18:00": [
-    ["main","Portugal Win & Over 1.5 Goals","Leão/Félix/Bruno too good; DR Congo's 52yr absence"],
-    ["safe","Portugal Win","94% probability Portugal win or draw — very safe"],
-    ["alt", "Portugal Win to Nil","DR Congo limited attack vs POR's organised defence"]
-  ],
-  "K · MD1 · Jun 18 · 03:00": [
-    ["main","Colombia Win","James/Díaz/Arias quality vs domestic-league Uzbekistan"],
-    ["safe","Colombia Win & Over 1.5 Goals","very high probability; Uzbekistan outclassed"],
-    ["alt", "Colombia Win to Nil","Uzbekistan's attack limited against South American defence"]
-  ],
-  "K · MD2 · Jun 23 · 18:00": [
-    ["main","Portugal Win & Over 2.5 Goals","dominant; Ronaldo's farewell statement game"],
-    ["safe","Portugal Win & Over 1.5 Goals","one of the safest bets in the group stage"],
-    ["alt", "Portugal to score 3+ Goals","Uzbekistan defensive quality is below WC standard"]
-  ],
-  "K · MD2 · Jun 24 · 03:00": [
-    ["main","Colombia Win","must consolidate 2nd; DR Congo's 52yr absence shows"],
-    ["safe","Colombia Double Chance","84% Colombia don't lose; solid choice"],
-    ["alt", "Both Teams to Score","DR Congo's physical strikers always threaten on the break"]
-  ],
-  "K · MD3 · Jun 28 · 00:30 (COL)": [
-    ["main","Portugal Win","want momentum; Ronaldo's scoring-record motivation"],
-    ["safe","Portugal Double Chance","covers shock draw; Portugal won't capitulate"],
-    ["alt", "Draw","Colombia already qualified; may not risk key players"]
-  ],
-  "K · MD3 · Jun 28 · 00:30 (COD)": [
-    ["main","DR Congo Win","pride and continental credibility; Uzbekistan tactically naive"],
-    ["safe","DR Congo Double Chance","76% probability DR Congo don't lose"],
-    ["alt", "Draw","Uzbekistan's resilience is an unknown quantity — 34% prob"]
-  ],
-  /* GROUP L */
-  "L · MD1 · Jun 17 · 21:00": [
-    ["main","England Win","Tuchel's structured press vs Modrić's ageing legs; ENG better form"],
-    ["safe","England Double Chance","82% probability England don't lose — solid pick"],
-    ["alt", "Draw","Croatia's big-game experience vs England's tournament pressure; 30%"]
-  ],
-  "L · MD1 · Jun 18 · 00:00": [
-    ["main","Ghana Win","Semenyo (Man City) provides elite quality; Panama overranked"],
-    ["safe","Ghana Double Chance","Ghana's attacking quality vs Panama's limited defence"],
-    ["alt", "Draw","Panama are a disciplined defensive side — 26% probability"]
-  ],
-  "L · MD2 · Jun 21 · 23:00": [
-    ["main","England Win","Kane/Bellingham/Saka vs rank-73 Ghana; comfortable expected"],
-    ["safe","England Win & Over 1.5 Goals","England score freely vs weaker opposition"],
-    ["alt", "England Win to Nil","Ghana's away attack is poor; 0 goals in 3 away games"]
-  ],
-  "L · MD2 · Jun 24 · 00:00": [
-    ["main","Croatia Win","Modrić's last dance; Croatia motivated, Panama overranked"],
-    ["safe","Croatia Double Chance","80% Croatia don't lose; safe pick"],
-    ["alt", "Croatia Win to Nil","Panama scored in only 1 of last 5 away matches"]
-  ],
-  "L · MD3 · Jun 27 · 22:00 (CRO)": [
-    ["main","Croatia Win","need points to qualify; Modrić/Kovačić quality decisive"],
-    ["safe","Both Teams to Score","Ghana must attack; Croatia won't sit off a rank-73 side"],
-    ["alt", "Draw","if Ghana equalise, Croatia may settle — 32% probability"]
-  ],
-  "L · MD3 · Jun 27 · 22:00 (PAN)": [
-    ["main","England Win","top-spot motive; Panama eliminated and demoralised"],
-    ["safe","England Double Chance","85% probability England don't lose; safe coverage"],
-    ["alt", "England Win to Nil","Panama struggled to create vs any top-50 side"]
-  ]
-};
-
-/* ── Badge label map ── */
-const BADGE = {
-  main: ["pred-main","MAIN"],
-  safe: ["pred-safe","SAFE ✓"],
-  alt:  ["pred-alt", "ALT"]
-};
-
-/* ── Build a unique key from each match card's tag + date text ── */
-function buildKey(card) {
-  const tag  = card.querySelector('.match-group-tag');
-  const date = card.querySelector('.match-date');
-  if (!tag || !date) return null;
-  // strip tag text from the date text to get just the date+time part
-  const tagText  = tag.textContent.trim();
-  const fullText = date.textContent.trim();
-  const dateText = fullText.replace(tagText, '').trim();
-  return tagText + ' · ' + dateText;
-}
-
-/* ── Inject predictions into every match card ── */
-document.querySelectorAll('.match-card').forEach(card => {
-  const baseKey = buildKey(card);
-  if (!baseKey) return;
-
-  // Try exact key first, then try suffix variants for same-slot cards
-  let rows = PREDS[baseKey];
-  if (!rows) {
-    // Find all keys that start with the base key
-    const matches = Object.keys(PREDS).filter(k => k.startsWith(baseKey));
-    if (matches.length === 1) rows = PREDS[matches[0]];
-    // For same-slot matches (e.g. two games at same time), disambiguate by home team
-    if (!rows && matches.length > 1) {
-      const homeTeam = (card.querySelector('.team-name:not(.away)') || {}).textContent || '';
-      // pick the key whose parenthetical matches the home team abbreviation
-      const found = matches.find(k => {
-        const m = k.match(/\(([^)]+)\)$/);
-        return m && homeTeam.trim().toUpperCase().startsWith(m[1]);
-      });
-      if (found) rows = PREDS[found];
-      else rows = PREDS[matches[0]]; // fallback to first
-    }
-  }
-  if (!rows) return;
-
-  // Build and append prediction block
-  const div = document.createElement('div');
-  div.innerHTML = '<hr class="pred-divider">' +
-    rows.map(([type, label, reason]) => {
-      const [cls, text] = BADGE[type];
-      return `<div class="pred-row">
-        <span class="pred-badge ${cls}">${text}</span>
-        <div class="pred-text">${label} <em>— ${reason}</em></div>
-      </div>`;
-    }).join('');
-  card.appendChild(div);
-});
 </script>
+
+<!-- SCHEDULE SECTION — populated by JS -->
+
+
 
 </body>
 </html>
